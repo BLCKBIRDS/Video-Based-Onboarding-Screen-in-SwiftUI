@@ -1,14 +1,12 @@
-//
-//  VideoPlayerUITests.swift
-//  VideoPlayerUITests
-//
-//  Created by Andreas Schultz on 23.04.20.
-//  Copyright © 2020 BLCKBIRDS. All rights reserved.
-//
+//File: SwiftUIVideoOnboardingScreenUITests.swift
+//Project: SwiftUIVideoOnboardingScreen
+
+//Created at 24.04.20 by BLCKBIRDS
+//Visit www.BLCKBIRDS.com for free SwiftUI tutorials & more
 
 import XCTest
 
-class VideoPlayerUITests: XCTestCase {
+class SwiftUIVideoOnboardingScreenUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

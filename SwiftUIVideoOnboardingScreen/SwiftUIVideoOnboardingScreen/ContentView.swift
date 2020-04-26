@@ -1,21 +1,17 @@
-//
-//  ContentView.swift
-//  VideoPlayer
-//
-//  Created by BLCKBIRDS on 23.04.20.
-//  Copyright © 2020 BLCKBIRDS. All rights reserved.
-//
+//File: ContentView.swift
+//Project: SwiftUIVideoOnboardingScreen
+
+//Created at 24.04.20 by BLCKBIRDS
+//Visit www.BLCKBIRDS.com for free SwiftUI tutorials & more
 
 import SwiftUI
-import AVKit
 
 struct ContentView: View {
     var body: some View {
         ZStack {
             PlayerView()
-                .background(Color.black)
-                .blur(radius: 2)
-                .overlay(Color.green.opacity(0.3))
+                .overlay(Color.green.opacity(0.4))
+                .blur(radius: 1)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
@@ -57,37 +53,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-struct PlayerView: UIViewRepresentable {
-    
-  func makeUIView(context: Context) -> UIView {
-    return PlayerUIView(frame: .zero)
-  }
-    
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
-    }
-}
-
-class PlayerUIView: UIView {
-  private let playerLayer = AVPlayerLayer()
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    
-    let url = URL(string: "https://blckbirds.com/wp-content/uploads/2020/04/video.mp4")!
-    let player = AVPlayer(url: url)
-    player.isMuted = true
-    player.play()
-    
-    playerLayer.player = player
-    playerLayer.videoGravity = AVLayerVideoGravity(rawValue: AVLayerVideoGravity.resizeAspectFill.rawValue)
-    layer.addSublayer(playerLayer)
-  }
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    playerLayer.frame = bounds
-  }
 }
